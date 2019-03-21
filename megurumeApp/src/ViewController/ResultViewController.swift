@@ -9,9 +9,12 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    let gurunaviDataRequest = GurunaviDataRuquest.shared()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        gurunaviDataRequest.request()
     }
     
     

@@ -1,0 +1,6 @@
+framework module Pods_megurumeApp {
+  umbrella header "Pods-megurumeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
