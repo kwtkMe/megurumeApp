@@ -9,12 +9,12 @@
 import Foundation
 import Alamofire
 
-class GurunaviDataRuquest: NSData {
+class GurunaviDataRuquest {
     
     let APIKey = "8a9437f47e0a95aee34dd0b89e867c8b"
     let APIUrl = "https://api.gnavi.co.jp/RestSearchAPI/v3/"
     
-    var responseData = [STBasicInfo]()
+    var responseData = [STResponceData]()
     var serchParameters = STSearchParameters()
     
     
@@ -30,28 +30,24 @@ class GurunaviDataRuquest: NSData {
     public func request() {
         let paras: Parameters = [
             "keyid": APIKey,
-            "format": "json",
+            "hit_per_page": 30, // 最大30件ヒットするものする
             "latitude": self.serchParameters.userLocation_latitude ?? 0.0,
             "longitude": self.serchParameters.userLocation_longitude ?? 0.0,
-            "range": self.serchParameters.searchRange_api ?? 1,
-            "offset_page": 1,
-            "hit_per_page": 50
+            "range": self.serchParameters.searchRange_api ?? 1
         ]
         
+        print("MARK: para is: \(paras)")
         // Alamofireというライブラリを使ってapiを叩く
-        Alamofire.request(APIUrl,parameters: paras).responseData{ response in
-            guard let object = response.result.value else {
-                return
-            }
-            // デコードする
-            print("MARK: object is \(object)")
-//            let Codabledata = try! JSONDecoder().decode(STResponceData.self, from: object)
-//                print(Codabledata)
-//            self.responseData.append(Codabledata.basicInfo)
-//
-//            self.hitResultCount = Int(Codabledata.totalHitCount)!
-            
-            // デコードの上、ユーザが指定した検索範囲でふるいにかける
+        Alamofire.request(APIUrl, parameters: paras)
+            .responseJSON{ response in
+                guard let object = response.data else {
+                    return
+                }
+                // デコードする
+                let data = try! JSONDecoder().decode(STResponceData.self, from: object)
+                self.responseData.append(data)
+                debugPrint("MARK: \(data)")
+                // デコードの上、ユーザが指定した検索範囲でふるいにかける
         }
     }
 }

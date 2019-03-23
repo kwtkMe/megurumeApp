@@ -35,6 +35,8 @@
 		464BDF0D224335D3007C8AFC /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		464BDF0F22433CBC007C8AFC /* ResponseStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStructs.swift; sourceTree = "<group>"; };
 		464BDF112243520A007C8AFC /* RequestStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStructs.swift; sourceTree = "<group>"; };
+		464BDF132245CEC3007C8AFC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		464BDF152245CEC3007C8AFC /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_megurumeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891347463551F204FD4F1604 /* Pods-megurumeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-megurumeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-megurumeApp/Pods-megurumeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A9240AFE556BC31EC1203653 /* Pods-megurumeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-megurumeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-megurumeApp/Pods-megurumeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,8 @@
 		92EC173C132EA9C16353CBB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				464BDF132245CEC3007C8AFC /* Alamofire.framework */,
+				464BDF152245CEC3007C8AFC /* SwiftyJSON.framework */,
 				67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */,
 			);
 			name = Frameworks;
