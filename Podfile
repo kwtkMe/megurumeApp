@@ -8,6 +8,7 @@ target 'megurumeApp' do
   # Pods for megurumeApp
 
   pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON', '~> 4.0'
 
 end

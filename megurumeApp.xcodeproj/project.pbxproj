@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4643FA7F224B1BEF00952085 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA7E224B1BEF00952085 /* GoogleMapsViewController.swift */; };
+		4643FA86224B1F8B00952085 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA84224B1F8B00952085 /* CustomTableViewCell.swift */; };
+		4643FA87224B1F8B00952085 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4643FA85224B1F8B00952085 /* CustomTableViewCell.xib */; };
+		4643FA89224B27E900952085 /* FormattedResponseDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA88224B27E900952085 /* FormattedResponseDataStruct.swift */; };
 		464BDEEE22421AF5007C8AFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDEED22421AF5007C8AFC /* AppDelegate.swift */; };
 		464BDEF022421AF5007C8AFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDEEF22421AF5007C8AFC /* SearchViewController.swift */; };
 		464BDEF322421AF5007C8AFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464BDEF122421AF5007C8AFC /* Main.storyboard */; };
@@ -16,12 +20,16 @@
 		464BDF0722421D2A007C8AFC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0622421D2A007C8AFC /* DetailViewController.swift */; };
 		464BDF0B224330DD007C8AFC /* GurunaviDataRuquest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0A224330DD007C8AFC /* GurunaviDataRuquest.swift */; };
 		464BDF0E224335D3007C8AFC /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0D224335D3007C8AFC /* NotificationCenter.swift */; };
-		464BDF1022433CBC007C8AFC /* ResponseStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0F22433CBC007C8AFC /* ResponseStructs.swift */; };
+		464BDF1022433CBC007C8AFC /* ResponseDataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */; };
 		464BDF122243520A007C8AFC /* RequestStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF112243520A007C8AFC /* RequestStructs.swift */; };
 		8B60CF8B7E4C316725C6CCB5 /* Pods_megurumeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4643FA7E224B1BEF00952085 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
+		4643FA84224B1F8B00952085 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4643FA85224B1F8B00952085 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		4643FA88224B27E900952085 /* FormattedResponseDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedResponseDataStruct.swift; sourceTree = "<group>"; };
 		464BDEEA22421AF5007C8AFC /* megurumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megurumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464BDEED22421AF5007C8AFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464BDEEF22421AF5007C8AFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -33,10 +41,8 @@
 		464BDF0622421D2A007C8AFC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		464BDF0A224330DD007C8AFC /* GurunaviDataRuquest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GurunaviDataRuquest.swift; sourceTree = "<group>"; };
 		464BDF0D224335D3007C8AFC /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
-		464BDF0F22433CBC007C8AFC /* ResponseStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStructs.swift; sourceTree = "<group>"; };
+		464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataStructs.swift; sourceTree = "<group>"; };
 		464BDF112243520A007C8AFC /* RequestStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStructs.swift; sourceTree = "<group>"; };
-		464BDF132245CEC3007C8AFC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		464BDF152245CEC3007C8AFC /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_megurumeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891347463551F204FD4F1604 /* Pods-megurumeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-megurumeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-megurumeApp/Pods-megurumeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A9240AFE556BC31EC1203653 /* Pods-megurumeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-megurumeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-megurumeApp/Pods-megurumeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +67,22 @@
 				A9240AFE556BC31EC1203653 /* Pods-megurumeApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4643FA80224B1E9500952085 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				4643FA85224B1F8B00952085 /* CustomTableViewCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		4643FA81224B1EDA00952085 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				4643FA84224B1F8B00952085 /* CustomTableViewCell.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 		464BDEE122421AF5007C8AFC = {
@@ -102,10 +124,11 @@
 		464BDF0022421C13007C8AFC /* src */ = {
 			isa = PBXGroup;
 			children = (
-				464BDF0222421C93007C8AFC /* storyboard */,
 				464BDF0822433085007C8AFC /* util */,
+				464BDF0222421C93007C8AFC /* storyboard */,
 				464BDF0322421CBA007C8AFC /* Model */,
 				464BDF0122421C6B007C8AFC /* ViewController */,
+				4643FA81224B1EDA00952085 /* CustomClass */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -116,6 +139,7 @@
 				464BDEEF22421AF5007C8AFC /* SearchViewController.swift */,
 				464BDF0422421D0B007C8AFC /* ResultViewController.swift */,
 				464BDF0622421D2A007C8AFC /* DetailViewController.swift */,
+				4643FA7E224B1BEF00952085 /* GoogleMapsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -125,6 +149,7 @@
 			children = (
 				464BDEF622421AF6007C8AFC /* LaunchScreen.storyboard */,
 				464BDEF122421AF5007C8AFC /* Main.storyboard */,
+				4643FA80224B1E9500952085 /* Xib */,
 			);
 			path = storyboard;
 			sourceTree = "<group>";
@@ -151,7 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				464BDF112243520A007C8AFC /* RequestStructs.swift */,
-				464BDF0F22433CBC007C8AFC /* ResponseStructs.swift */,
+				464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */,
+				4643FA88224B27E900952085 /* FormattedResponseDataStruct.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -167,8 +193,6 @@
 		92EC173C132EA9C16353CBB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				464BDF132245CEC3007C8AFC /* Alamofire.framework */,
-				464BDF152245CEC3007C8AFC /* SwiftyJSON.framework */,
 				67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */,
 			);
 			name = Frameworks;
@@ -241,6 +265,7 @@
 			files = (
 				464BDEF822421AF6007C8AFC /* LaunchScreen.storyboard in Resources */,
 				464BDEF522421AF6007C8AFC /* Assets.xcassets in Resources */,
+				4643FA87224B1F8B00952085 /* CustomTableViewCell.xib in Resources */,
 				464BDEF322421AF5007C8AFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,11 +281,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-megurumeApp/Pods-megurumeApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +322,15 @@
 			files = (
 				464BDEF022421AF5007C8AFC /* SearchViewController.swift in Sources */,
 				464BDF122243520A007C8AFC /* RequestStructs.swift in Sources */,
-				464BDF1022433CBC007C8AFC /* ResponseStructs.swift in Sources */,
+				464BDF1022433CBC007C8AFC /* ResponseDataStructs.swift in Sources */,
 				464BDF0E224335D3007C8AFC /* NotificationCenter.swift in Sources */,
 				464BDEEE22421AF5007C8AFC /* AppDelegate.swift in Sources */,
+				4643FA89224B27E900952085 /* FormattedResponseDataStruct.swift in Sources */,
 				464BDF0B224330DD007C8AFC /* GurunaviDataRuquest.swift in Sources */,
+				4643FA86224B1F8B00952085 /* CustomTableViewCell.swift in Sources */,
 				464BDF0522421D0B007C8AFC /* ResultViewController.swift in Sources */,
 				464BDF0722421D2A007C8AFC /* DetailViewController.swift in Sources */,
+				4643FA7F224B1BEF00952085 /* GoogleMapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

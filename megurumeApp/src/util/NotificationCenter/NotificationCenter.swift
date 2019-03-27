@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+extension Notification.Name {
+    // APIクライアント
+    static let DidFetchedRequest = Notification.Name("request_fetched")
+}

@@ -6,8 +6,6 @@
 //  Copyright © 2019 kwtkMe. All rights reserved.
 //
 
-import SwiftyJSON
-
 struct STResponceData: Codable {
     var totalHitCount: Int?
     var pageNum: Int?

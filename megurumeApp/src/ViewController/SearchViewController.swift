@@ -10,14 +10,17 @@ import CoreLocation
 
 class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet weak var DistanceLabel: UILabel!
-    @IBOutlet weak var DistanceSlider: UISlider!
-    
-    var locationManager: CLLocationManager!
+    // APIクライアント
     let gurunaviDataRequest = GurunaviDataRuquest.shared()
-    
+    // 位置情報マネージャ
+    var locationManager: CLLocationManager!
+    // よくないグローバル
     var searchRange: Int?
     var searchRange_api: Int?
+    
+    // MARK: UI
+    @IBOutlet weak var DistanceLabel: UILabel!
+    @IBOutlet weak var DistanceSlider: UISlider!
     
     
     override func viewDidLoad() {
@@ -122,11 +125,11 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func requestGurunaviResponse(userLocation: CLLocationCoordinate2D) {
-        gurunaviDataRequest.serchParameters
-            = STSearchParameters(userLocation_latitude: userLocation.latitude,
-                                 userLocation_longitude: userLocation.longitude,
-                                 searchRange: self.searchRange,
-                                 searchRange_api: self.searchRange_api)
+        let searchParameters = STSearchParameters(userLocation_latitude: userLocation.latitude,
+                                                  userLocation_longitude: userLocation.longitude,
+                                                  searchRange: self.searchRange,
+                                                  searchRange_api: self.searchRange_api)
+        gurunaviDataRequest.request(searchParameters: searchParameters)
     }
     
 }

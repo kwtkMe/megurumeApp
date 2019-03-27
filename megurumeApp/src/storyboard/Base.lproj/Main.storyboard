@@ -101,17 +101,23 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1Tb-ga-FRG">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.88" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.28876506979695427" green="0.17692403945471072" blue="0.057658665556095418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" id="uX7-48-jFK">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="81" id="uX7-48-jFK">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX7-48-jFK" id="fEs-Kf-r0B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Zi-MJ-Gvg" id="TYN-DW-uw3"/>
+                                    <outlet property="delegate" destination="7Zi-MJ-Gvg" id="O8s-rd-3Xj"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,8 +129,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pGQ-xc-dRL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="検索結果" id="GSs-xq-Spd"/>
+                    <navigationItem key="navigationItem" title="検索結果" id="GSs-xq-Spd">
+                        <barButtonItem key="rightBarButtonItem" image="google-maps-100" id="k9z-Cf-pvd"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="1Tb-ga-FRG" id="Zv3-Wt-URn"/>
                         <segue destination="4nA-TO-33u" kind="show" identifier="goDetail" id="bO9-RU-9zx"/>
                     </connections>
                 </viewController>
@@ -218,4 +227,7 @@
             <point key="canvasLocation" x="213.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="google-maps-100" width="75" height="75"/>
+    </resources>
 </document>
