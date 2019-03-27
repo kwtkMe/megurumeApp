@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4643FA7F224B1BEF00952085 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA7E224B1BEF00952085 /* GoogleMapsViewController.swift */; };
-		4643FA86224B1F8B00952085 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA84224B1F8B00952085 /* CustomTableViewCell.swift */; };
-		4643FA87224B1F8B00952085 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4643FA85224B1F8B00952085 /* CustomTableViewCell.xib */; };
-		4643FA89224B27E900952085 /* FormattedResponseDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA88224B27E900952085 /* FormattedResponseDataStruct.swift */; };
+		4643FA8C224B769200952085 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643FA8B224B769200952085 /* TableViewCell.swift */; };
 		464BDEEE22421AF5007C8AFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDEED22421AF5007C8AFC /* AppDelegate.swift */; };
 		464BDEF022421AF5007C8AFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDEEF22421AF5007C8AFC /* SearchViewController.swift */; };
 		464BDEF322421AF5007C8AFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464BDEF122421AF5007C8AFC /* Main.storyboard */; };
@@ -27,9 +25,7 @@
 
 /* Begin PBXFileReference section */
 		4643FA7E224B1BEF00952085 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
-		4643FA84224B1F8B00952085 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		4643FA85224B1F8B00952085 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		4643FA88224B27E900952085 /* FormattedResponseDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedResponseDataStruct.swift; sourceTree = "<group>"; };
+		4643FA8B224B769200952085 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		464BDEEA22421AF5007C8AFC /* megurumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megurumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464BDEED22421AF5007C8AFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464BDEEF22421AF5007C8AFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -69,18 +65,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4643FA80224B1E9500952085 /* Xib */ = {
+		4643FA8A224B767100952085 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
-				4643FA85224B1F8B00952085 /* CustomTableViewCell.xib */,
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
-		4643FA81224B1EDA00952085 /* CustomClass */ = {
-			isa = PBXGroup;
-			children = (
-				4643FA84224B1F8B00952085 /* CustomTableViewCell.swift */,
+				4643FA8B224B769200952085 /* TableViewCell.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -108,6 +96,7 @@
 			children = (
 				464BDEFF22421BFE007C8AFC /* resource */,
 				464BDF0022421C13007C8AFC /* src */,
+				4643FA8A224B767100952085 /* CustomClass */,
 			);
 			path = megurumeApp;
 			sourceTree = "<group>";
@@ -128,7 +117,6 @@
 				464BDF0222421C93007C8AFC /* storyboard */,
 				464BDF0322421CBA007C8AFC /* Model */,
 				464BDF0122421C6B007C8AFC /* ViewController */,
-				4643FA81224B1EDA00952085 /* CustomClass */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -149,7 +137,6 @@
 			children = (
 				464BDEF622421AF6007C8AFC /* LaunchScreen.storyboard */,
 				464BDEF122421AF5007C8AFC /* Main.storyboard */,
-				4643FA80224B1E9500952085 /* Xib */,
 			);
 			path = storyboard;
 			sourceTree = "<group>";
@@ -177,7 +164,6 @@
 			children = (
 				464BDF112243520A007C8AFC /* RequestStructs.swift */,
 				464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */,
-				4643FA88224B27E900952085 /* FormattedResponseDataStruct.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -265,7 +251,6 @@
 			files = (
 				464BDEF822421AF6007C8AFC /* LaunchScreen.storyboard in Resources */,
 				464BDEF522421AF6007C8AFC /* Assets.xcassets in Resources */,
-				4643FA87224B1F8B00952085 /* CustomTableViewCell.xib in Resources */,
 				464BDEF322421AF5007C8AFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,9 +310,8 @@
 				464BDF1022433CBC007C8AFC /* ResponseDataStructs.swift in Sources */,
 				464BDF0E224335D3007C8AFC /* NotificationCenter.swift in Sources */,
 				464BDEEE22421AF5007C8AFC /* AppDelegate.swift in Sources */,
-				4643FA89224B27E900952085 /* FormattedResponseDataStruct.swift in Sources */,
+				4643FA8C224B769200952085 /* TableViewCell.swift in Sources */,
 				464BDF0B224330DD007C8AFC /* GurunaviDataRuquest.swift in Sources */,
-				4643FA86224B1F8B00952085 /* CustomTableViewCell.swift in Sources */,
 				464BDF0522421D0B007C8AFC /* ResultViewController.swift in Sources */,
 				464BDF0722421D2A007C8AFC /* DetailViewController.swift in Sources */,
 				4643FA7F224B1BEF00952085 /* GoogleMapsViewController.swift in Sources */,

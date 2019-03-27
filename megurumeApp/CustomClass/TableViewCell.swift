@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.swift
+//  TableViewCell.swift
 //  megurumeApp
 //
 //  Created by RIVER on 2019/03/27.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
-
+class TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var gurumeThumbnailImageView: UIImageView!
     @IBOutlet weak var gurumeNameLabel: UILabel!
-    @IBOutlet weak var gurumeTumbnailImageView: UIImageView!
     @IBOutlet weak var gurumeAccessLabel: UILabel!
-    @IBOutlet weak var gurumeBudgetLabel: UILabel!
     
 }

@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1079" y="134"/>
         </scene>
         <!--検索結果-->
         <scene sceneID="7G6-Ol-GxV">
@@ -105,13 +105,47 @@
                                 <color key="separatorColor" red="0.28876506979695427" green="0.17692403945471072" blue="0.057658665556095418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="81" id="uX7-48-jFK">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="81"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="89" id="uX7-48-jFK" customClass="TableViewCell" customModule="megurumeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX7-48-jFK" id="fEs-Kf-r0B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wja-Cr-cTA" userLabel="gurumeTumbnailImageView">
+                                                    <rect key="frame" x="0.0" y="4.5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="BZI-py-20o"/>
+                                                        <constraint firstAttribute="width" secondItem="wja-Cr-cTA" secondAttribute="height" multiplier="1:1" id="Eah-OZ-pnP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gurumeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-9V-0lB" userLabel="gurumeNameLabel">
+                                                    <rect key="frame" x="88" y="39" width="98.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gurumeAccess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUK-Zh-8TM" userLabel="gurumeAccessLabel">
+                                                    <rect key="frame" x="88" y="66.5" width="107.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GUK-Zh-8TM" firstAttribute="bottom" secondItem="fEs-Kf-r0B" secondAttribute="bottomMargin" constant="8" id="3HO-ue-Bay"/>
+                                                <constraint firstItem="GUK-Zh-8TM" firstAttribute="top" secondItem="Rkx-9V-0lB" secondAttribute="bottom" constant="8" id="M9D-or-Qoo"/>
+                                                <constraint firstItem="wja-Cr-cTA" firstAttribute="centerY" secondItem="fEs-Kf-r0B" secondAttribute="centerY" id="SsU-M2-kcI"/>
+                                                <constraint firstItem="wja-Cr-cTA" firstAttribute="leading" secondItem="fEs-Kf-r0B" secondAttribute="leading" id="Zhj-wj-r0Q"/>
+                                                <constraint firstItem="GUK-Zh-8TM" firstAttribute="leading" secondItem="wja-Cr-cTA" secondAttribute="trailing" constant="8" id="lNZ-7a-XNa"/>
+                                                <constraint firstItem="Rkx-9V-0lB" firstAttribute="leading" secondItem="wja-Cr-cTA" secondAttribute="trailing" constant="8" id="ljj-Ql-wUj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gurumeAccessLabel" destination="GUK-Zh-8TM" id="jEH-Ju-dyM"/>
+                                            <outlet property="gurumeNameLabel" destination="Rkx-9V-0lB" id="LEy-Qf-Liy"/>
+                                            <outlet property="gurumeThumbnailImageView" destination="wja-Cr-cTA" id="9dK-Xp-HVQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
