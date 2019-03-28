@@ -40,7 +40,6 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = setTableViewCellProperty(indexPath: indexPath)
-        print("VUED: \(indexPath.row)")
         
         return cell
     }
@@ -74,5 +73,4 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         return cell
     }
-    
 }

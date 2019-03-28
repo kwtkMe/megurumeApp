@@ -163,12 +163,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pGQ-xc-dRL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="検索結果" id="GSs-xq-Spd">
-                        <barButtonItem key="rightBarButtonItem" image="google-maps-100" id="k9z-Cf-pvd"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="検索結果" id="GSs-xq-Spd"/>
                     <connections>
                         <outlet property="tableView" destination="1Tb-ga-FRG" id="Zv3-Wt-URn"/>
-                        <segue destination="4nA-TO-33u" kind="show" identifier="goDetail" id="bO9-RU-9zx"/>
+                        <segue destination="4nA-TO-33u" kind="show" identifier="goDetail" id="6SF-iA-hWM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1y-EN-p64" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,25 +205,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwx-2A-0rm" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysh-kU-q4I">
-                                        <rect key="frame" x="20" y="10" width="335" height="30"/>
-                                        <color key="backgroundColor" red="0.39940425750000003" green="0.1001945809" blue="0.16860273479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="YMk-Ym-cef"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="地図を見る">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapMapButton:" destination="4nA-TO-33u" eventType="touchUpInside" id="p61-Xu-ZkR"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKZ-YE-xp3">
-                                        <rect key="frame" x="20" y="60" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="20" width="335" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="uUR-fB-20b"/>
+                                            <constraint firstAttribute="height" constant="60" id="lad-tZ-qEb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="電話をかける">
@@ -238,13 +222,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="ysh-kU-q4I" firstAttribute="leading" secondItem="Jwx-2A-0rm" secondAttribute="leading" constant="20" id="871-Bw-mXC"/>
-                                    <constraint firstAttribute="trailing" secondItem="ysh-kU-q4I" secondAttribute="trailing" constant="20" id="Upx-Fl-ujk"/>
-                                    <constraint firstItem="SKZ-YE-xp3" firstAttribute="top" secondItem="ysh-kU-q4I" secondAttribute="bottom" constant="20" id="eXA-in-gRf"/>
-                                    <constraint firstAttribute="trailing" secondItem="SKZ-YE-xp3" secondAttribute="trailing" constant="20" id="ezu-Kj-NkI"/>
+                                    <constraint firstItem="SKZ-YE-xp3" firstAttribute="centerY" secondItem="Jwx-2A-0rm" secondAttribute="centerY" id="8QQ-CP-6oA"/>
+                                    <constraint firstItem="SKZ-YE-xp3" firstAttribute="centerX" secondItem="Jwx-2A-0rm" secondAttribute="centerX" id="H5u-7Z-kCb"/>
+                                    <constraint firstItem="SKZ-YE-xp3" firstAttribute="leading" secondItem="Jwx-2A-0rm" secondAttribute="leading" constant="20" id="dmU-HC-gx1"/>
+                                    <constraint firstAttribute="trailing" secondItem="SKZ-YE-xp3" secondAttribute="trailing" constant="20" id="iOp-KV-wgh"/>
                                     <constraint firstAttribute="height" constant="100" id="khs-WJ-OS9"/>
-                                    <constraint firstItem="SKZ-YE-xp3" firstAttribute="leading" secondItem="Jwx-2A-0rm" secondAttribute="leading" constant="20" id="uLT-fx-Pl3"/>
-                                    <constraint firstItem="ysh-kU-q4I" firstAttribute="top" secondItem="Jwx-2A-0rm" secondAttribute="top" constant="10" id="v6X-g2-fGd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -260,11 +242,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yS0-dS-jUT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="店舗詳細" id="ohU-MZ-e3D"/>
+                    <navigationItem key="navigationItem" title="店舗詳細" id="ohU-MZ-e3D">
+                        <barButtonItem key="rightBarButtonItem" image="google-maps-100" id="cpz-t6-C2L">
+                            <connections>
+                                <action selector="tapGoogleMapbutton:" destination="4nA-TO-33u" id="oIW-nY-RpX"/>
+                                <segue destination="e1G-RG-mWl" kind="show" id="dKS-iS-Zje"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUy-KG-1y9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2592.8000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--Google Maps View Controller-->
+        <scene sceneID="iY9-XM-I6A">
+            <objects>
+                <viewController id="e1G-RG-mWl" customClass="GoogleMapsViewController" customModule="megurumeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Fl-Pt-HhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Pps-87-ehl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B1v-Cj-b9X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aH8-6m-gSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3367" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PXA-1l-nQq">
@@ -348,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEh-Zn-4bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3520.8000000000002" y="132.23388305847078"/>
+            <point key="canvasLocation" x="2593" y="879"/>
         </scene>
     </scenes>
     <resources>
