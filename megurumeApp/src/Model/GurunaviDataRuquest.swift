@@ -6,7 +6,7 @@
 //  Copyright © 2019 kwtkMe. All rights reserved.
 //
 
-import Foundation
+import CoreLocation
 import Alamofire
 
 
@@ -16,6 +16,8 @@ class GurunaviDataRuquest {
     let APIUrl = "https://api.gnavi.co.jp/RestSearchAPI/v3/"
     // 取得データ
     var responseData: STResponceData?
+    // うーん
+    var selectedCellIndex: Int?
     
     // シングルトンとして扱う
     private static let sharedInstance: GurunaviDataRuquest = {
@@ -34,9 +36,10 @@ class GurunaviDataRuquest {
             "longitude": searchParameters.userLocation_longitude ?? 0.0,
             "range": searchParameters.searchRange_api ?? 1
         ]
-        print(paras)
+        
         // HTTPの通信待機
         var keepAlive = true
+        
         // Alamofireというライブラリを使ってapiを叩く
         Alamofire.request(APIUrl, parameters: paras)
             .responseJSON{ response in
@@ -44,12 +47,11 @@ class GurunaviDataRuquest {
                     return
                 }
                 // デコードする
-                self.responseData
-                    = try! JSONDecoder().decode(STResponceData.self, from: object)
+                self.responseData = try! JSONDecoder().decode(STResponceData.self, from: object)
                 
                 keepAlive = false
-                // デコードの上、ユーザが指定した検索範囲でふるいにかける
         }
+        
         let runLoop = RunLoop.current
         while keepAlive && runLoop.run(mode: RunLoop.Mode.default, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
                 // 0.1秒毎の処理なので、処理が止まらない

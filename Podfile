@@ -10,5 +10,6 @@ target 'megurumeApp' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'GoogleMaps'
 
 end

@@ -32,7 +32,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     private func initSubviews() {
         // DistanceLabelを初期化
-        // 検索範囲(searchRange)の設定も兼ねる...
         setDistanceLabelTextAndSearchRange(distance: self.DistanceSlider.value)
         // DistanceSliderにメソッドを付与
         DistanceSlider.addTarget(self,
@@ -63,40 +62,30 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     private func setDistanceLabelTextAndSearchRange(distance: Float) {
         let distance_Int = Int(distance)
-        var approximateTime = distance_Int / 70
         var approximateDistance: Int?
         var approximateDistance_api: Int?
         
-        switch approximateTime {
-        case 0..<5:
-            approximateDistance = 5 * 70
+        switch distance_Int {
+        case 1:
+            approximateDistance = 300
+            approximateDistance_api = 1
+        case 2:
+            approximateDistance = 500
             approximateDistance_api = 2
-            approximateTime = 5
-        case 5..<10:
-            approximateDistance = 10 * 70
+        case 3:
+            approximateDistance = 1000
             approximateDistance_api = 3
-            approximateTime = 10
-        case 10..<15:
-            approximateDistance = 15 * 70
+        case 4:
+            approximateDistance = 2000
             approximateDistance_api = 4
-            approximateTime = 15
-        case 15..<20:
-            approximateDistance = 20 * 70
-            approximateDistance_api = 4
-            approximateTime = 20
-        case 20..<25:
-            approximateDistance = 25 * 70
-            approximateDistance_api = 4
-            approximateTime = 25
-        case 25..<30:
-            approximateDistance = 30 * 70
+        case 5,6:
+            approximateDistance = 3000
             approximateDistance_api = 5
-            approximateTime = 30
         default:
             approximateDistance = distance_Int
         }
         
-        let insertText = "徒歩\(approximateTime)分(直線距離\(approximateDistance!)m)圏内"
+        let insertText = "直線距離\(approximateDistance!)m圏内"
         self.DistanceLabel.text = insertText
         // serchRangeの設定
         self.searchRange = approximateDistance

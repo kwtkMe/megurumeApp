@@ -51,7 +51,7 @@
                                 <color key="textColor" white="0.13" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" red="0.1173277274" green="0.29685682060000002" blue="0.48239141699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="2100" translatesAutoresizingMaskIntoConstraints="NO" id="cd2-BX-wuy" userLabel="distanceSlider">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="cd2-BX-wuy" userLabel="distanceSlider">
                                 <rect key="frame" x="46" y="104" width="283" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yw5-qh-z2x"/>
@@ -105,7 +105,7 @@
                                 <color key="separatorColor" red="0.28876506979695427" green="0.17692403945471072" blue="0.057658665556095418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="89" id="uX7-48-jFK" customClass="TableViewCell" customModule="megurumeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="89" id="uX7-48-jFK" customClass="ResultTableViewCell" customModule="megurumeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX7-48-jFK" id="fEs-Kf-r0B">
@@ -185,6 +185,24 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDU-jE-YuQ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="503"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLo-rI-F1c">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="800" id="zrG-bM-LgA"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="XT1-9L-uhD" kind="embed" id="S9Y-5s-rEA"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wLo-rI-F1c" secondAttribute="bottom" id="6gz-1n-2BE"/>
+                                    <constraint firstItem="wLo-rI-F1c" firstAttribute="centerX" secondItem="mDU-jE-YuQ" secondAttribute="centerX" id="CG7-lj-1E5"/>
+                                    <constraint firstItem="wLo-rI-F1c" firstAttribute="top" secondItem="mDU-jE-YuQ" secondAttribute="top" id="Gv5-uw-Bit"/>
+                                    <constraint firstAttribute="trailing" secondItem="wLo-rI-F1c" secondAttribute="trailing" id="fxt-Ky-8rr"/>
+                                    <constraint firstItem="wLo-rI-F1c" firstAttribute="leading" secondItem="mDU-jE-YuQ" secondAttribute="leading" id="s1A-0O-Ug7"/>
+                                </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwx-2A-0rm" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
@@ -199,6 +217,9 @@
                                         <state key="normal" title="地図を見る">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapMapButton:" destination="4nA-TO-33u" eventType="touchUpInside" id="p61-Xu-ZkR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKZ-YE-xp3">
                                         <rect key="frame" x="20" y="60" width="335" height="30"/>
@@ -210,6 +231,9 @@
                                         <state key="normal" title="電話をかける">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapTelButton:" destination="4nA-TO-33u" eventType="touchUpInside" id="yhx-SE-jbr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -259,6 +283,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bik-ze-G5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="213.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Detail Content View Controller Table View Controller-->
+        <scene sceneID="EKr-aF-LMM">
+            <objects>
+                <viewController id="XT1-9L-uhD" customClass="DetailContentViewControllerTableViewController" customModule="megurumeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vyd-KO-iqL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tjx-09-58v" userLabel="gurumeThumbnailImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="RpS-cT-Xlz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gurumeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-TU-eLh" userLabel="gurumeName">
+                                <rect key="frame" x="24" y="180" width="141" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gurumeAccess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-zJ-NDf" userLabel="gurumeAccess">
+                                <rect key="frame" x="24" y="213" width="108" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.46000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pMA-xR-Xgh">
+                                <rect key="frame" x="0.0" y="253" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XT1-9L-uhD" id="lQf-tZ-Xt3"/>
+                                    <outlet property="delegate" destination="XT1-9L-uhD" id="FjP-Nk-AG9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dV0-TU-eLh" firstAttribute="leading" secondItem="Vyd-KO-iqL" secondAttribute="leadingMargin" constant="8" id="3g4-lP-Glo"/>
+                            <constraint firstAttribute="trailing" secondItem="tjx-09-58v" secondAttribute="trailing" id="5mA-h2-ZcL"/>
+                            <constraint firstItem="PL5-ah-yQx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dV0-TU-eLh" secondAttribute="trailing" symbolic="YES" id="9B5-oD-4Kk"/>
+                            <constraint firstItem="PL5-ah-yQx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FRK-zJ-NDf" secondAttribute="trailing" symbolic="YES" id="Bjc-lq-yUn"/>
+                            <constraint firstItem="tjx-09-58v" firstAttribute="top" secondItem="Vyd-KO-iqL" secondAttribute="top" id="Bji-12-0fe"/>
+                            <constraint firstItem="FRK-zJ-NDf" firstAttribute="top" secondItem="dV0-TU-eLh" secondAttribute="bottom" constant="4" id="IA2-yV-FPV"/>
+                            <constraint firstAttribute="trailing" secondItem="pMA-xR-Xgh" secondAttribute="trailing" id="Rbd-IZ-8oq"/>
+                            <constraint firstItem="dV0-TU-eLh" firstAttribute="top" secondItem="tjx-09-58v" secondAttribute="bottom" constant="20" id="W9d-Es-gZE"/>
+                            <constraint firstItem="pMA-xR-Xgh" firstAttribute="leading" secondItem="Vyd-KO-iqL" secondAttribute="leading" id="Xxw-hk-PUe"/>
+                            <constraint firstItem="pMA-xR-Xgh" firstAttribute="top" secondItem="FRK-zJ-NDf" secondAttribute="bottom" constant="20" id="Y9Y-Ur-yab"/>
+                            <constraint firstItem="tjx-09-58v" firstAttribute="leading" secondItem="Vyd-KO-iqL" secondAttribute="leading" id="brd-cj-ofv"/>
+                            <constraint firstItem="FRK-zJ-NDf" firstAttribute="leading" secondItem="Vyd-KO-iqL" secondAttribute="leadingMargin" constant="8" id="ceB-Vw-Gja"/>
+                            <constraint firstAttribute="bottom" secondItem="pMA-xR-Xgh" secondAttribute="bottom" id="dFS-tO-dRR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PL5-ah-yQx"/>
+                    </view>
+                    <connections>
+                        <outlet property="gurumeAccessLabel" destination="FRK-zJ-NDf" id="EbL-Zt-ttC"/>
+                        <outlet property="gurumeNameLabel" destination="dV0-TU-eLh" id="hfv-Vk-aam"/>
+                        <outlet property="gurumeThumbnailImageView" destination="tjx-09-58v" id="DMt-5O-THf"/>
+                        <outlet property="tableView" destination="pMA-xR-Xgh" id="egM-eS-KW7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OEh-Zn-4bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3520.8000000000002" y="132.23388305847078"/>
         </scene>
     </scenes>
     <resources>

@@ -33,6 +33,8 @@ struct STBasicInfo: Codable {
     var holiday: String?
     var budget: Int?
     var creditCard: String?
+    var latitude: String?
+    var longitude: String?
     var tumbnail: STTumbNail?
     var access: STAccess?
     
@@ -44,6 +46,8 @@ struct STBasicInfo: Codable {
         case holiday = "holiday"
         case budget = "budget"
         case creditCard = "credit_card"
+        case latitude = "latitude"
+        case longitude = "longitude"
         case tumbnail = "image_url"
         case access = "access"
     }
@@ -57,6 +61,8 @@ struct STBasicInfo: Codable {
         holiday    = try? values.decode(String.self ,forKey: .holiday)
         budget     = try? values.decode(Int.self ,forKey: .budget)
         creditCard = try? values.decode(String.self ,forKey: .creditCard)
+        latitude   = try? values.decode(String.self ,forKey: .latitude)
+        longitude  = try? values.decode(String.self ,forKey: .longitude)
         tumbnail   = try? values.decode(STTumbNail.self, forKey: .tumbnail)
         access     = try? values.decode(STAccess.self, forKey: .access)
     }

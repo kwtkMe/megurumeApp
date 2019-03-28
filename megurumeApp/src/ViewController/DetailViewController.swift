@@ -14,5 +14,9 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func tapMapButton(_ sender: UIButton) {
+    }
+    @IBAction func tapTelButton(_ sender: UIButton) {
+    }
     
 }
