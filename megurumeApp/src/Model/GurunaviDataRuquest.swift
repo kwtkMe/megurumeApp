@@ -31,7 +31,7 @@ class GurunaviDataRuquest {
     public func request(searchParameters: STSearchParameters) {
         let paras: Parameters = [
             "keyid": APIKey,
-            "hit_per_page": 30, // 最大30件ヒットするものする
+            "hit_per_page": 100, // 最大100件ヒットするものする
             "latitude": searchParameters.userLocation_latitude ?? 0.0,
             "longitude": searchParameters.userLocation_longitude ?? 0.0,
             "range": searchParameters.searchRange_api ?? 1
@@ -54,7 +54,6 @@ class GurunaviDataRuquest {
         
         let runLoop = RunLoop.current
         while keepAlive && runLoop.run(mode: RunLoop.Mode.default, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
-                // 0.1秒毎の処理なので、処理が止まらない
         }
     }
 }

@@ -20,7 +20,6 @@
 		464BDF0522421D0B007C8AFC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0422421D0B007C8AFC /* ResultViewController.swift */; };
 		464BDF0722421D2A007C8AFC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0622421D2A007C8AFC /* DetailViewController.swift */; };
 		464BDF0B224330DD007C8AFC /* GurunaviDataRuquest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0A224330DD007C8AFC /* GurunaviDataRuquest.swift */; };
-		464BDF0E224335D3007C8AFC /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0D224335D3007C8AFC /* NotificationCenter.swift */; };
 		464BDF1022433CBC007C8AFC /* ResponseDataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */; };
 		464BDF122243520A007C8AFC /* RequestStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BDF112243520A007C8AFC /* RequestStructs.swift */; };
 		8B60CF8B7E4C316725C6CCB5 /* Pods_megurumeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */; };
@@ -42,7 +41,6 @@
 		464BDF0422421D0B007C8AFC /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		464BDF0622421D2A007C8AFC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		464BDF0A224330DD007C8AFC /* GurunaviDataRuquest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GurunaviDataRuquest.swift; sourceTree = "<group>"; };
-		464BDF0D224335D3007C8AFC /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataStructs.swift; sourceTree = "<group>"; };
 		464BDF112243520A007C8AFC /* RequestStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStructs.swift; sourceTree = "<group>"; };
 		67273E34FE49368B24CF1D68 /* Pods_megurumeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_megurumeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +168,6 @@
 		464BDF0822433085007C8AFC /* util */ = {
 			isa = PBXGroup;
 			children = (
-				464BDF0C224335A4007C8AFC /* NotificationCenter */,
 				464BDF09224330A0007C8AFC /* Structs */,
 			);
 			path = util;
@@ -183,14 +180,6 @@
 				464BDF0F22433CBC007C8AFC /* ResponseDataStructs.swift */,
 			);
 			path = Structs;
-			sourceTree = "<group>";
-		};
-		464BDF0C224335A4007C8AFC /* NotificationCenter */ = {
-			isa = PBXGroup;
-			children = (
-				464BDF0D224335D3007C8AFC /* NotificationCenter.swift */,
-			);
-			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
 		92EC173C132EA9C16353CBB5 /* Frameworks */ = {
@@ -345,7 +334,6 @@
 				464BDEF022421AF5007C8AFC /* SearchViewController.swift in Sources */,
 				464BDF122243520A007C8AFC /* RequestStructs.swift in Sources */,
 				464BDF1022433CBC007C8AFC /* ResponseDataStructs.swift in Sources */,
-				464BDF0E224335D3007C8AFC /* NotificationCenter.swift in Sources */,
 				464BDEEE22421AF5007C8AFC /* AppDelegate.swift in Sources */,
 				4643FA8C224B769200952085 /* ResultTableViewCell.swift in Sources */,
 				4643FA92224C58F600952085 /* DetailTableViewCell.swift in Sources */,
