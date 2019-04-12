@@ -15,7 +15,8 @@ class GurunaviDataRuquest {
     let APIKey = "8a9437f47e0a95aee34dd0b89e867c8b"
     let APIUrl = "https://api.gnavi.co.jp/RestSearchAPI/v3/"
     // 取得データ
-    var responseData: STResponceData?
+    var responseData: STResponce?
+    var responseData_image = [UIImage?]()
     // うーん
     var selectedCellIndex: Int?
     
@@ -37,19 +38,23 @@ class GurunaviDataRuquest {
             "range": searchParameters.searchRange_api ?? 1
         ]
         
-        // HTTPの通信待機
         var keepAlive = true
-        
-        // Alamofireというライブラリを使ってapiを叩く
-        Alamofire.request(APIUrl, parameters: paras)
-            .responseJSON{ response in
-                guard let object = response.data else {
-                    return
+        Alamofire.request(APIUrl, parameters: paras).responseJSON{ response in
+            guard let object = response.data else {
+                return
+            }
+            self.responseData = try! JSONDecoder().decode(STResponce.self, from: object)
+            for basicInfo in (self.responseData?.basicInfo)! {
+                let imageURL = (basicInfo.tumbnail?.image1!)!
+                if imageURL != "" {
+                    Alamofire.request(imageURL).responseImage { response in
+                        self.responseData_image.append(response.value)
+                    }
+                }else {
+                    self.responseData_image.append(nil)
                 }
-                // デコードする
-                self.responseData = try! JSONDecoder().decode(STResponceData.self, from: object)
-                
-                keepAlive = false
+            }
+            keepAlive = false
         }
         
         let runLoop = RunLoop.current

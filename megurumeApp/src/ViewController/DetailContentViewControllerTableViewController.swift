@@ -126,14 +126,32 @@ class DetailContentViewControllerTableViewController: UIViewController, UITableV
         
         self.gurumeNameLabel.text = gurumeName
         self.gurumeAccessLabel.text = gurumeAccess
-        if let thumbnailURL = gurunaviDataRequest.responseData?.basicInfo?[gurunaviDataRequest.selectedCellIndex!].tumbnail?.imageURL1 {
-            if thumbnailURL == "" {
-                self.gurumeThumbnailImageView.backgroundColor = .lightGray
-            } else {
-                self.gurumeThumbnailImageView.af_setImage(withURL: URL(string: thumbnailURL)!)
+        if let url = gurunaviDataRequest.responseData?.basicInfo?[gurunaviDataRequest.selectedCellIndex!].tumbnail?.image1 {
+            if url != "" {
+                Alamofire.request(url).responseImage { response in
+                    self.gurumeThumbnailImageView.image = response.value
+                }
+            }else {
+                self.gurumeThumbnailImageView.backgroundColor = .gray
             }
+        }else {
+            self.gurumeThumbnailImageView.backgroundColor = .red
         }
     }
     
+    
+    func formatImageURL2UIImage(ImageURL: String?) -> UIImage? {
+        var image: UIImage?
+        if let url = ImageURL {
+            if url != "" {
+                Alamofire.request(url).responseImage { response in
+                    image = response.value
+                }
+            }else {
+                image = nil
+            }
+        }
+        return image
+    }
 
 }

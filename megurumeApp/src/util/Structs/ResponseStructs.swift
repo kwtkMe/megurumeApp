@@ -6,7 +6,11 @@
 //  Copyright © 2019 kwtkMe. All rights reserved.
 //
 
-struct STResponceData: Codable {
+import UIKit
+import Alamofire
+import AlamofireImage
+
+struct STResponce: Codable {
     var totalHitCount: Int?
     var pageNum: Int?
     var basicInfo: [STBasicInfo]?
@@ -35,7 +39,7 @@ struct STBasicInfo: Codable {
     var creditCard: String?
     var latitude: String?
     var longitude: String?
-    var tumbnail: STTumbNail?
+    var tumbnail: STThumbnailImage_url?
     var access: STAccess?
     
     enum CodingKeys: String, CodingKey{
@@ -63,24 +67,24 @@ struct STBasicInfo: Codable {
         creditCard = try? values.decode(String.self ,forKey: .creditCard)
         latitude   = try? values.decode(String.self ,forKey: .latitude)
         longitude  = try? values.decode(String.self ,forKey: .longitude)
-        tumbnail   = try? values.decode(STTumbNail.self, forKey: .tumbnail)
+        tumbnail   = try? values.decode(STThumbnailImage_url.self, forKey: .tumbnail)
         access     = try? values.decode(STAccess.self, forKey: .access)
     }
 }
 
-struct STTumbNail: Codable {
-    var imageURL1: String?
-    var imageURL2: String?
+struct STThumbnailImage_url: Codable {
+    var image1: String?
+    var image2: String?
     
     enum CodingKeys: String, CodingKey{
-        case imageURL1 = "shop_image1"
-        case imageURL2 = "shop_image2"
+        case image1 = "shop_image1"
+        case image2 = "shop_image2"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        self.imageURL1 = try? values.decode(String.self ,forKey: .imageURL1)
-        self.imageURL2 = try? values.decode(String.self ,forKey: .imageURL2)
+        image1 = try? values.decode(String.self ,forKey: .image1)
+        image2 = try? values.decode(String.self ,forKey: .image2)
     }
 }
 

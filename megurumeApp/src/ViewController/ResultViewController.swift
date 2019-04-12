@@ -21,6 +21,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("RESULT")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,13 +66,21 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.gurumeNameLabel.text = "\(indexPath.row + 1) : " + gurumeName
         cell.gurumeAccessLabel.text = gurumeAccess
-        if let thumbnailURL = gurunaviDataRequest.responseData?.basicInfo?[indexPath.row].tumbnail?.imageURL1 {
-            if thumbnailURL == "" {
-                cell.gurumeThumbnailImageView.backgroundColor = .lightGray
-            } else {
-                cell.gurumeThumbnailImageView.af_setImage(withURL: URL(string: thumbnailURL)!)
+        // サムネイルの設定
+        let defaultImage = UIImage(named: "defaultImage")
+        cell.gurumeThumbnailImageView.image = defaultImage
+        if let imageURL = gurunaviDataRequest.responseData?.basicInfo?[indexPath.row].tumbnail?.image1 {
+            if imageURL != "" {
+                Alamofire.request(imageURL).responseImage { response in
+                    cell.gurumeThumbnailImageView.image = response.value
+                }
+            }else {
+                cell.gurumeThumbnailImageView.backgroundColor = .gray
             }
+        }else {
+            cell.gurumeThumbnailImageView.backgroundColor = .red
         }
+        
         return cell
     }
 }
