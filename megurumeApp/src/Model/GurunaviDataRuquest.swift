@@ -16,7 +16,6 @@ class GurunaviDataRuquest {
     let APIUrl = "https://api.gnavi.co.jp/RestSearchAPI/v3/"
     // 取得データ
     var responseData: STResponce?
-    var responseData_image = [UIImage?]()
     // うーん
     var selectedCellIndex: Int?
     
@@ -44,16 +43,6 @@ class GurunaviDataRuquest {
                 return
             }
             self.responseData = try! JSONDecoder().decode(STResponce.self, from: object)
-            for basicInfo in (self.responseData?.basicInfo)! {
-                let imageURL = (basicInfo.tumbnail?.image1!)!
-                if imageURL != "" {
-                    Alamofire.request(imageURL).responseImage { response in
-                        self.responseData_image.append(response.value)
-                    }
-                }else {
-                    self.responseData_image.append(nil)
-                }
-            }
             keepAlive = false
         }
         
